@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Old Oyo Leadership Simulator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,700&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-grid"></div>
+
+  <main class="shell">
+    <header class="hero reveal">
+      <p class="eyebrow">Interactive Historical Model</p>
+      <h1>Old Oyo Kingdom Dashboard</h1>
+      <p class="lead">
+        Explore how culture, institutions, and leadership style can shape long-term
+        legitimacy, prosperity, and stability.
+      </p>
+    </header>
+
+    <section class="panel reveal delay-1">
+      <h2>Scenario Presets</h2>
+      <div class="preset-row" role="group" aria-label="Scenario presets">
+        <button class="preset" data-preset="peaceful">Peaceful Reign</button>
+        <button class="preset" data-preset="council">Council Conflict</button>
+        <button class="preset" data-preset="trade">Trade Boom</button>
+        <button class="preset" data-preset="succession">Succession Crisis</button>
+      </div>
+      <p id="presetDescription" class="preset-note"></p>
+    </section>
+
+    <section class="grid reveal delay-2">
+      <aside class="panel controls">
+        <h2>Simulation Controls</h2>
+
+        <label for="years">Years: <span id="yearsValue">20</span></label>
+        <input id="years" type="range" min="5" max="60" step="1" value="20" />
+
+        <label for="seed">Seed (optional)</label>
+        <input id="seed" type="number" min="0" max="999999" placeholder="Random each run" />
+
+        <label for="alaafinAuthority">Alaafin Authority: <span id="alaafinAuthorityValue">60</span></label>
+        <input id="alaafinAuthority" type="range" min="35" max="85" step="1" value="60" />
+
+        <label for="oyoMesiInfluence">Oyo Mesi Influence: <span id="oyoMesiInfluenceValue">60</span></label>
+        <input id="oyoMesiInfluence" type="range" min="35" max="85" step="1" value="60" />
+
+        <label for="ogboniInfluence">Ogboni Influence: <span id="ogboniInfluenceValue">55</span></label>
+        <input id="ogboniInfluence" type="range" min="35" max="85" step="1" value="55" />
+
+        <label for="tradeBase">Trade Base: <span id="tradeBaseValue">54</span></label>
+        <input id="tradeBase" type="range" min="30" max="90" step="1" value="54" />
+
+        <label for="culturalBase">Cultural Cohesion Base: <span id="culturalBaseValue">62</span></label>
+        <input id="culturalBase" type="range" min="35" max="90" step="1" value="62" />
+
+        <label for="shockIntensity">Shock Intensity: <span id="shockIntensityValue">1.0</span></label>
+        <input id="shockIntensity" type="range" min="0.5" max="2.0" step="0.1" value="1.0" />
+
+        <button id="runSimulation" class="run">Run Simulation</button>
+      </aside>
+
+      <section class="panel charts">
+        <h2>Kingdom Dynamics Over Time</h2>
+        <div class="chart-grid">
+          <article>
+            <h3>Legitimacy</h3>
+            <canvas id="legitimacyChart"></canvas>
+          </article>
+          <article>
+            <h3>Prosperity</h3>
+            <canvas id="prosperityChart"></canvas>
+          </article>
+          <article>
+            <h3>Stability</h3>
+            <canvas id="stabilityChart"></canvas>
+          </article>
+        </div>
+      </section>
+    </section>
+
+    <section class="panel reveal delay-3">
+      <h2>Final Snapshot</h2>
+      <div id="snapshot" class="snapshot"></div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

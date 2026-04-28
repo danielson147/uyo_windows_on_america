@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Launch the Old Oyo leadership simulator and the Grade 7 solar system simulation from one public site." />
+  <title>Simulations — Old Oyo & Solar System</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #071423;
+      --panel: rgba(255, 255, 255, 0.06);
+      --panel-border: rgba(255, 255, 255, 0.12);
+      --text: #e6f2f6;
+      --muted: #9fbcc9;
+      --accent: #9fe3c8;
+      --accent-strong: #f2c66d;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(159, 227, 200, 0.16), transparent 30%),
+        radial-gradient(circle at 80% 20%, rgba(242, 198, 109, 0.12), transparent 28%),
+        var(--bg);
+      color: var(--text);
+    }
+
+    main {
+      width: min(920px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 56px 0 40px;
+    }
+
+    .hero {
+      display: grid;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .eyebrow {
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 0.8rem;
+      color: var(--accent);
+    }
+
+    h1, h2, p { margin: 0; }
+
+    h1 {
+      font-size: clamp(2.4rem, 4vw, 4rem);
+      line-height: 0.95;
+      max-width: 12ch;
+    }
+
+    .lead {
+      max-width: 60ch;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.65;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 26px;
+    }
+
+    .card {
+      background: var(--panel);
+      padding: 22px;
+      border-radius: 18px;
+      border: 1px solid var(--panel-border);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
+      backdrop-filter: blur(10px);
+    }
+
+    .card h2 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 16px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #071423;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .link.secondary {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--panel-border);
+    }
+
+    .footer {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    code {
+      color: var(--accent-strong);
+      font-family: inherit;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Public Web Demos</p>
+      <h1>Two simulations, one shared site.</h1>
+      <p class="lead">
+        Open the Old Oyo leadership dashboard or the Grade 7 solar system model from the same GitHub Pages landing page.
+      </p>
+    </section>
+
+    <section class="grid" aria-label="Simulation links">
+      <article class="card">
+        <h2>Old Oyo Leadership Simulator</h2>
+        <p>Explore legitimacy, prosperity, and stability with preset scenarios and live charts.</p>
+        <a class="link" href="./web/">Open the dashboard</a>
+      </article>
+
+      <article class="card">
+        <h2>Grade 7 Solar System Simulation</h2>
+        <p>Animate the planets, adjust orbit speed, and click each world to learn a fact.</p>
+        <a class="link secondary" href="./solar_grade7/">Open the solar system app</a>
+      </article>
+    </section>
+
+    <p class="footer">
+      Publish this folder as the GitHub Pages root. The simulation folders are already included beside it, so both links work without a build step.
+    </p>
+  </main>
+</body>
+</html>

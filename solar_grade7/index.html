@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grade 7 Solar System Simulation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="layout">
+    <header class="hero">
+      <p class="eyebrow">Science Explorer</p>
+      <h1>Solar System Simulation for Grade 7</h1>
+      <p>
+        Watch planets orbit the Sun, change speed and size, and click planets to
+        learn quick facts.
+      </p>
+    </header>
+
+    <section class="panel controls">
+      <h2>Controls</h2>
+
+      <label for="speed">Orbit Speed: <span id="speedValue">1.0x</span></label>
+      <input id="speed" type="range" min="0.2" max="3.0" step="0.1" value="1.0" />
+
+      <label for="size">Planet Size: <span id="sizeValue">1.0x</span></label>
+      <input id="size" type="range" min="0.6" max="1.8" step="0.1" value="1.0" />
+
+      <div class="button-row">
+        <button id="toggle">Pause</button>
+        <button id="reset">Reset View</button>
+      </div>
+
+      <label class="checkbox-row">
+        <input id="showOrbits" type="checkbox" checked />
+        Show orbit lines
+      </label>
+
+      <p class="note">
+        Tip: Click any planet in the simulation to see a fact card below.
+      </p>
+    </section>
+
+    <section class="panel sim-panel">
+      <h2>Simulation</h2>
+      <canvas id="space" width="900" height="540" aria-label="Solar system simulation"></canvas>
+    </section>
+
+    <section class="panel facts">
+      <h2>Planet Fact</h2>
+      <article id="factCard" class="fact-card">
+        <h3>Welcome Explorer</h3>
+        <p>Click a planet to learn one interesting Grade 7-level fact.</p>
+      </article>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
